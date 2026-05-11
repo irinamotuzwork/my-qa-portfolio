@@ -1,0 +1,155 @@
+.hero {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  padding: 96px 20px;
+}
+
+.heroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.description {
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+/* CTA */
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  padding: 12px 24px;
+  border: 1px solid var(--text-primary);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* VISUAL */
+
+.heroVisual {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* TERMINAL */
+
+.terminal {
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+.terminalTop {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f57;
+}
+
+.yellow {
+  background: #febc2e;
+}
+
+.green {
+  background: #28c840;
+}
+
+.terminalContent {
+  padding: 12px;
+  color: #d6d6d6;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* CODE */
+
+.codeSnippet {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  font-family: monospace;
+  border-radius: 6px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero h2 {
+    font-size: 1.25rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.1rem;
+  }
+}
