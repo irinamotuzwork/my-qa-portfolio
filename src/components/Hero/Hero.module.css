@@ -1,90 +1,146 @@
+/* =========================
+   HERO WRAPPER
+========================= */
 .hero {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
-  padding: 96px 20px;
+  padding: var(--space-10) var(--space-5);
+
+  position: relative;
+  overflow: hidden;
 }
 
+/* subtle background depth */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    var(--accent-soft),
+    transparent 70%
+  );
+  top: -200px;
+  right: -200px;
+  z-index: 0;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 .heroContainer {
-  max-width: 1200px;
+  max-width: var(--container-xl);
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: var(--space-10);
+
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
+/* =========================
+   CONTENT SIDE
+========================= */
 .heroContent {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-5);
 }
 
 .eyebrow {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
   color: var(--text-secondary);
+
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1.1;
+  font-size: var(--font-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 .hero h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: var(--font-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
 }
 
 .description {
   color: var(--text-secondary);
-  max-width: 500px;
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+  max-width: 520px;
 }
 
-/* CTA */
-
+/* =========================
+   CTA SECTION
+========================= */
 .ctaButtons {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  align-items: center;
 }
 
 .ctaButton {
-  padding: 12px 24px;
-  border: 1px solid var(--text-primary);
-  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--border);
+  background: transparent;
+
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+
   color: var(--text-primary);
-  transition: 0.25s ease;
+  text-decoration: none;
+
+  transition: all var(--transition-base);
 }
 
 .ctaButton:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
-/* VISUAL */
-
+/* =========================
+   VISUAL SIDE
+========================= */
 .heroVisual {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-6);
 }
 
-/* TERMINAL */
-
+/* =========================
+   TERMINAL CARD
+========================= */
 .terminal {
-  background: #111;
-  border-radius: 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
   overflow: hidden;
   font-family: monospace;
+
+  box-shadow: var(--shadow-sm);
 }
 
 .terminalTop {
   display: flex;
-  gap: 6px;
-  padding: 10px;
+  gap: var(--space-2);
+  padding: var(--space-3);
 }
 
 .dot {
@@ -106,36 +162,43 @@
 }
 
 .terminalContent {
-  padding: 12px;
-  color: #d6d6d6;
-  font-size: 13px;
+  padding: var(--space-3);
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--space-2);
 }
 
-/* CODE */
-
+/* =========================
+   CODE SNIPPET
+========================= */
 .codeSnippet {
   background: var(--bg-secondary);
-  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-4);
+
   font-family: monospace;
-  border-radius: 6px;
+  box-shadow: var(--shadow-xs);
 }
 
-/* RESPONSIVE */
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   .heroContainer {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: var(--font-3xl);
   }
 
   .hero h2 {
-    font-size: 1.25rem;
+    font-size: var(--font-lg);
   }
 
   .ctaButtons {

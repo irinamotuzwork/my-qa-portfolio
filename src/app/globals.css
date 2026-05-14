@@ -1,43 +1,183 @@
-/* ========================= */
-/* CSS VARIABLES */
-
 :root {
+  /* =========================
+     CORE THEME (YOUR UPDATE)
+  ========================= */
   --bg-primary: #F5F5F3;
   --bg-secondary: #EFEFEA;
+
   --text-primary: #111111;
   --text-secondary: #6B6B6B;
+
   --font-primary: "Inter", "Suisse Intl", "Neue Haas Grotesk",
     "SF Pro Display", sans-serif;
+
+  /* =========================
+     ACCENT (for CTAs / highlights)
+  ========================= */
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: rgba(79, 70, 229, 0.12);
+
+  /* =========================
+     BORDERS (light theme optimized)
+  ========================= */
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border: rgba(0, 0, 0, 0.10);
+  --border-strong: rgba(0, 0, 0, 0.18);
+
+  /* =========================
+     SHADOWS (soft, modern SaaS)
+  ========================= */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* =========================
+     RADIUS
+  ========================= */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* =========================
+     SPACING SCALE
+  ========================= */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+
+  /* =========================
+     TYPOGRAPHY SCALE
+  ========================= */
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 2rem;
+  --font-3xl: 3rem;
+  --font-4xl: 4rem;
+
+  /* =========================
+     TYPOGRAPHY WEIGHTS
+  ========================= */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* =========================
+     LINE HEIGHTS
+  ========================= */
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* =========================
+     LETTER SPACING
+  ========================= */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+
+  /* =========================
+     LAYOUT
+  ========================= */
+  --container-xl: 1200px;
+  --header-height: 64px;
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* =========================
+     INTERACTIONS
+  ========================= */
+  --hover-bg: rgba(0, 0, 0, 0.04);
+  --active-bg: rgba(79, 70, 229, 0.12);
+  --focus-ring: 0 0 0 2px rgba(79, 70, 229, 0.35);
 }
 
-/* ========================= */
-/* RESET */
-
+/* =========================
+   BASE RESET
+========================= */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* ========================= */
-/* GLOBAL */
-
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
+/* =========================
+   BODY
+========================= */
 body {
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-primary);
-  line-height: 1.5;
-  font-size: 16px;
+  line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding-top: 64px;
 }
 
-/* ========================= */
-/* MAIN LAYOUT */
+/* =========================
+   LINKS
+========================= */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
 
-main {
-  padding-top: 64px;
+a:hover {
+  color: var(--text-primary);
+}
+
+/* =========================
+   FOCUS STATES (IMPORTANT FOR QA PORTFOLIO)
+========================= */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* =========================
+   SELECTION
+========================= */
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-primary);
+}
+
+/* =========================
+   SCROLLBAR (SUBTLE POLISH)
+========================= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
 }

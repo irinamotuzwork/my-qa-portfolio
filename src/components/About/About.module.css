@@ -1,0 +1,229 @@
+/* =========================
+   ABOUT HERO
+========================= */
+.aboutHero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+
+  padding: calc(var(--space-10) * 2) var(--space-5) var(--space-10);
+
+  background-color: var(--bg-primary);
+}
+
+/* =========================
+   CONTAINER SYSTEM
+========================= */
+.sectionContainer {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+
+  margin-bottom: var(--space-3);
+
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.heroContent h1 {
+  font-size: var(--font-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+
+  margin-bottom: var(--space-4);
+
+  color: var(--text-primary);
+}
+
+.heroContent p {
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+
+  margin-bottom: var(--space-3);
+
+  color: var(--text-secondary);
+  max-width: 760px;
+}
+
+.heroContent > *:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  padding: var(--space-10) var(--space-5);
+}
+
+.sectionAlt {
+  padding: var(--space-10) var(--space-5);
+  background-color: var(--bg-secondary);
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+.section h2 {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+
+  margin-bottom: var(--space-6);
+
+  color: var(--text-primary);
+}
+
+/* =========================
+   EXPERIENCE GRID
+========================= */
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+.experienceCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-6);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.experienceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.experienceCard h3 {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+
+  margin: 0;
+
+  color: var(--text-primary);
+}
+
+.experienceCard p {
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+
+  margin: 0;
+
+  color: var(--text-secondary);
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+/* pill */
+.skillTag {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  padding: var(--space-3) var(--space-5);
+
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+
+  transition: all var(--transition-base);
+}
+
+.skillTag:hover {
+  background-color: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* =========================
+   CAREER TEXT
+========================= */
+.careerText {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careerText p {
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+
+  margin-bottom: var(--space-5);
+
+  color: var(--text-secondary);
+}
+
+.careerText p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .experienceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: var(--font-3xl);
+  }
+
+  .section,
+  .sectionAlt {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .section h2 {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .skillTag {
+    width: 100%;
+    text-align: center;
+  }
+}
