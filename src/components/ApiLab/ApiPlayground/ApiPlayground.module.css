@@ -1,0 +1,228 @@
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+.sectionHeading {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+
+  color: var(--text-primary);
+
+  margin-bottom: var(--space-4);
+}
+
+.sectionIntro {
+  max-width: 760px;
+
+  color: var(--text-secondary);
+
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+
+  margin-bottom: var(--space-8);
+}
+
+/* =========================
+   GRID
+========================= */
+.playgroundGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: var(--space-6);
+}
+
+/* =========================
+   PANEL
+========================= */
+.panel {
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-6);
+}
+
+.panelHeader {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+
+  margin-bottom: var(--space-6);
+
+  color: var(--text-primary);
+}
+
+/* =========================
+   FORM
+========================= */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-2);
+
+  margin-bottom: var(--space-5);
+}
+
+.formGroup label {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+
+  color: var(--text-primary);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+
+  padding: var(--space-3);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  font-size: var(--font-sm);
+
+  resize: vertical;
+}
+
+.formGroup textarea {
+  font-family: monospace;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.sendButton {
+  width: 100%;
+
+  padding: var(--space-3);
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: var(--accent);
+  color: white;
+
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.sendButton:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSE META
+========================= */
+.responseMeta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: var(--space-4);
+
+  margin-bottom: var(--space-6);
+}
+
+.responseMeta div {
+  background: var(--bg-primary);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  padding: var(--space-3);
+}
+
+.responseMeta span {
+  display: block;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  margin-bottom: 4px;
+}
+
+.responseMeta strong {
+  color: var(--text-primary);
+}
+
+/* =========================
+   RESPONSE BOX
+========================= */
+.responseBox {
+  background: #1e1e1e;
+
+  border-radius: var(--radius-md);
+
+  padding: var(--space-5);
+
+  overflow-x: auto;
+
+  margin-bottom: var(--space-6);
+}
+
+.responseBox pre {
+  margin: 0;
+
+  color: #d6d6d6;
+
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* =========================
+   ASSERTIONS
+========================= */
+.assertions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.assertionSuccess {
+  padding: var(--space-3);
+
+  border-radius: var(--radius-md);
+
+  background: rgba(40, 200, 64, 0.08);
+
+  border: 1px solid rgba(40, 200, 64, 0.2);
+
+  color: #1f7a33;
+
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .playgroundGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .responseMeta {
+    grid-template-columns: 1fr;
+  }
+}

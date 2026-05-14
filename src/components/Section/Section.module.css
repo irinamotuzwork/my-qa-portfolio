@@ -1,3 +1,4 @@
 .section {
-  padding: var(--space-10) 0;
+  padding: calc(var(--space-10) * 1.5) var(--space-5);
+  scroll-margin-top: var(--header-height);
 }

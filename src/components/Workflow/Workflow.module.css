@@ -1,0 +1,81 @@
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* section heading */
+.sectionHeading {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  text-align: left;
+  margin-bottom: var(--space-8);
+}
+
+/* =========================
+   PIPELINE ROW
+========================= */
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: var(--space-4);
+}
+
+/* =========================
+   STEP
+========================= */
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* label */
+.label {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+
+  color: var(--text-primary);
+
+  padding: var(--space-2) var(--space-4);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--bg-secondary);
+
+  transition: all 0.2s ease;
+}
+
+/* hover emphasis */
+.label:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* arrow */
+.arrow {
+  color: var(--text-secondary);
+  font-size: var(--font-lg);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .pipeline {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}

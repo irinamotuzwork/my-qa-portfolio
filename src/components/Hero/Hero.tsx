@@ -53,7 +53,7 @@ export default function Hero() {
           <div className={styles.codeSnippet}>
             <pre>
               <code>
-                await page.locator('#submit').click();
+                await page.locator(&apos;#submit&apos;).click();
               </code>
             </pre>
           </div>

@@ -1,59 +1,17 @@
-import styles from "@/components/ApiLab/ApiLab.module.css";
+import ApiHero from "@/components/ApiLab/ApiHero/ApiHero";
+import ApiPlayground from "@/components/ApiLab/ApiPlayground/ApiPlayground";
+import AutomationConcepts from "@/components/ApiLab/AutomationConcepts/AutomationConcepts";
+import CodeSnippets from "@/components/ApiLab/CodeSnippets/CodeSnippets";
+import MetricsDashboard from "@/components/ApiLab/MetricsDashboard/MetricsDashboard";
 
-export default function ApiTestingPage() {
+export default function ApiLabPage() {
   return (
-    <main className={styles.page}>
-
-      {/* HERO */}
-      <section className={styles.hero}>
-        <div className={styles.container}>
-          <div className={styles.heroContent}>
-
-            <h1>QA API Playground</h1>
-
-            <p>
-              Test and validate API endpoints with structured
-              request/response workflows.
-            </p>
-
-          </div>
-        </div>
-      </section>
-
-      {/* GET ALL POSTS */}
-      <section className={styles.section}>
-        <div className={styles.container}>
-
-          <h2>GET All Posts</h2>
-
-          <button className={styles.button}>
-            Get All Posts
-          </button>
-
-        </div>
-      </section>
-
-      {/* GET SINGLE POST */}
-      <section className={styles.sectionAlt}>
-        <div className={styles.container}>
-
-          <h2>GET Single Post</h2>
-
-          <form className={styles.form}>
-            <input
-              className={styles.input}
-              type="number"
-              placeholder="Enter Post ID"
-            />
-
-            <button className={styles.button} type="submit">
-              Get Post
-            </button>
-          </form>
-
-        </div>
-      </section>
-
+    <main>
+      <ApiHero />
+      <ApiPlayground />
+      <AutomationConcepts />
+      <CodeSnippets />
+      <MetricsDashboard />
     </main>
   );
 }
