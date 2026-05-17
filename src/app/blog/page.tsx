@@ -1,31 +1,40 @@
 import styles from "@/components/Blog/Blog.module.css";
+import Link from "next/link";
 
-export default function BlogPage() {
-  const posts = [
-    {
-      title: "Building Reliable Playwright Tests",
-      summary:
-        "Lessons learned while improving selector stability and reducing flaky tests.",
-    },
-    {
-      title: "Testing REST APIs with JavaScript",
-      summary:
-        "Using structured request validation and response assertions for API testing.",
-    },
-    {
-      title: "Transitioning from Manual QA to Automation",
-      summary:
-        "How I started building automation frameworks using Playwright and Next.js.",
-    },
-  ];
+async function getPosts() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+  const res = await fetch(`${baseUrl}/api/posts`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch posts");
+  }
+
+  return res.json();
+}
+
+/**
+ * @typedef {Object} Post
+ * @property {number} id
+ * @property {string} title
+ * @property {string} slug
+ * @property {string} excerpt
+ * @property {string} content
+ * @property {string} tags
+ * @property {string} createdAt
+ */
+
+export default async function BlogPage() {
+  /** @type {Post[]} */
+  const posts = (await getPosts()) || [];
 
   return (
     <main className={styles.page}>
-
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.container}>
-
           <p className={styles.eyebrow}>
             QA ENGINEERING BLOG
           </p>
@@ -36,37 +45,32 @@ export default function BlogPage() {
           </h1>
 
           <p className={styles.description}>
-            Thoughts, experiments, and practical lessons
-            from building modern QA automation workflows.
+            Thoughts, experiments, and practical lessons from building modern QA automation workflows.
           </p>
-
         </div>
       </section>
 
       {/* POSTS */}
       <section className={styles.postsSection}>
         <div className={styles.container}>
-
           <div className={styles.postsGrid}>
             {posts.map((post) => (
               <article
-                key={post.title}
+                key={post.id}
                 className={styles.postCard}
               >
                 <h2>{post.title}</h2>
 
-                <p>{post.summary}</p>
+                <p>{post.excerpt}</p>
 
-                <a href="#">
+                <Link href={`/blog/${post.slug}`}>
                   Read More →
-                </a>
+                </Link>
               </article>
             ))}
           </div>
-
         </div>
       </section>
-
     </main>
   );
 }
