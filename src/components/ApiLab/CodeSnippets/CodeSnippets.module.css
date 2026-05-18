@@ -1,12 +1,4 @@
 /* =========================
-   CONTAINER
-========================= */
-.container {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-}
-
-/* =========================
    TYPOGRAPHY
 ========================= */
 .sectionHeading {
@@ -29,7 +21,7 @@
   font-size: var(--font-md);
   line-height: var(--leading-relaxed);
 
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 /* =========================
@@ -162,7 +154,7 @@
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
   }

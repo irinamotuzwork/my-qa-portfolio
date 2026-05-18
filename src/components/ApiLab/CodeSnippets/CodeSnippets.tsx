@@ -43,9 +43,8 @@ const profile = await request.get("/profile", {
         </h2>
 
         <p className={styles.sectionIntro}>
-          Example API automation patterns including
-          response assertions, schema validation,
-          and authenticated request workflows.
+          Code patterns for response validation, schema checks,
+          and authenticated API requests.
         </p>
 
         <div className={styles.grid}>

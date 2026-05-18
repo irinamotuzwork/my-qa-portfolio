@@ -1,12 +1,4 @@
 /* =========================
-   CONTAINER
-========================= */
-.container {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-}
-
-/* =========================
    TYPOGRAPHY
 ========================= */
 .sectionHeading {
@@ -29,7 +21,7 @@
   font-size: var(--font-md);
   line-height: var(--leading-relaxed);
 
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 /* =========================
@@ -47,11 +39,13 @@
 ========================= */
 .panel {
   background: var(--bg-secondary);
-
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-
   padding: var(--space-6);
+  min-width: 0;
+  width: 100%;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .panelHeader {
@@ -61,6 +55,9 @@
   margin-bottom: var(--space-6);
 
   color: var(--text-primary);
+
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--text-primary) 100%);
+  -webkit-background-clip: text;
 }
 
 /* =========================
@@ -112,6 +109,7 @@
   width: 100%;
 
   padding: var(--space-3);
+  min-height: 44px;
 
   border: none;
   border-radius: var(--radius-md);
@@ -209,6 +207,21 @@
   border: 1px solid rgba(40, 200, 64, 0.2);
 
   color: #1f7a33;
+
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+}
+
+.assertionFailure {
+  padding: var(--space-3);
+
+  border-radius: var(--radius-md);
+
+  background: rgba(200, 40, 40, 0.08);
+
+  border: 1px solid rgba(200, 40, 40, 0.2);
+
+  color: #7a1f1f;
 
   font-size: var(--font-sm);
   font-weight: var(--font-medium);

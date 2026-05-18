@@ -7,35 +7,17 @@ export default function ApiHero() {
         {/* LEFT */}
         <div className={styles.content}>
           <p className={styles.eyebrow}>
-            API TESTING • AUTOMATION • QA ENGINEERING
+            API TESTING • AUTOMATION
           </p>
 
           <h1>
-            Interactive API Testing & Automation Lab
+            API Testing Lab
           </h1>
 
           <p className={styles.description}>
-            Simulating real-world API validation workflows
-            including response assertions, schema verification,
-            request chaining, and automation-focused testing strategies.
+            Execute and validate API requests with response
+            assertions and schema checks.
           </p>
-
-          <div className={styles.metrics}>
-            <div className={styles.metricCard}>
-              <span>99.2%</span>
-              <p>Tests Passed</p>
-            </div>
-
-            <div className={styles.metricCard}>
-              <span>248ms</span>
-              <p>Avg Response</p>
-            </div>
-
-            <div className={styles.metricCard}>
-              <span>94%</span>
-              <p>Coverage</p>
-            </div>
-          </div>
         </div>
 
         {/* RIGHT */}

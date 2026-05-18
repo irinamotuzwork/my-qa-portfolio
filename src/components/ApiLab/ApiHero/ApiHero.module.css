@@ -2,15 +2,10 @@
    HERO
 ========================= */
 .hero {
-  min-height: calc(100vh - var(--header-height));
-
   display: flex;
   align-items: center;
 
-  padding:
-    calc(var(--space-10) * 2)
-    var(--space-5)
-    var(--space-10);
+  padding: var(--space-10) var(--space-5);
 
   position: relative;
   overflow: hidden;
@@ -38,13 +33,7 @@
   opacity: 0.6;
 }
 
-/* =========================
-   CONTAINER
-========================= */
 .container {
-  max-width: var(--container-xl);
-  margin: 0 auto;
-
   width: 100%;
 
   display: grid;
@@ -56,6 +45,8 @@
 
   position: relative;
   z-index: 1;
+
+  padding: 0 var(--space-5);
 }
 
 /* =========================
@@ -94,45 +85,6 @@
 
   font-size: var(--font-md);
   line-height: var(--leading-relaxed);
-}
-
-/* =========================
-   METRICS
-========================= */
-.metrics {
-  display: flex;
-  gap: var(--space-4);
-
-  flex-wrap: wrap;
-
-  margin-top: var(--space-3);
-}
-
-.metricCard {
-  background: var(--bg-secondary);
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-
-  padding: var(--space-4);
-
-  min-width: 140px;
-}
-
-.metricCard span {
-  display: block;
-
-  font-size: var(--font-xl);
-  font-weight: var(--font-bold);
-
-  color: var(--text-primary);
-
-  margin-bottom: var(--space-2);
-}
-
-.metricCard p {
-  color: var(--text-secondary);
-  font-size: var(--font-sm);
 }
 
 /* =========================

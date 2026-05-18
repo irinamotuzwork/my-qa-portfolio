@@ -8,7 +8,7 @@
   --text-primary: #111111;
   --text-secondary: #6B6B6B;
 
-  --font-primary: "Inter", "Suisse Intl", "Neue Haas Grotesk",
+  --font-primary: var(--font-inter), "Suisse Intl", "Neue Haas Grotesk",
     "SF Pro Display", sans-serif;
 
   /* =========================
@@ -117,6 +117,8 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* =========================
@@ -130,6 +132,14 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   padding-top: 64px;
+
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Typography stability: prevent long strings from breaking layout */
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
 }
 
 /* =========================
@@ -149,7 +159,8 @@ a:hover {
    FOCUS STATES (IMPORTANT FOR QA PORTFOLIO)
 ========================= */
 :focus-visible {
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring);
   border-radius: var(--radius-sm);
 }
@@ -180,4 +191,14 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border-strong);
+}
+
+/* =========================
+   RESPONSIVE CONTAINER PADDING
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
 }

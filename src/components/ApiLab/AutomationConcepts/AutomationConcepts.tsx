@@ -43,9 +43,8 @@ export default function AutomationConcepts() {
         </h2>
 
         <p className={styles.sectionIntro}>
-          Core API automation principles used to validate
-          reliability, integration stability, response accuracy,
-          and production-ready service behavior.
+          Core patterns for validating API reliability,
+          response correctness, and integration behavior.
         </p>
 
         <div className={styles.grid}>

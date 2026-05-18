@@ -6,12 +6,22 @@ import MetricsDashboard from "@/components/ApiLab/MetricsDashboard/MetricsDashbo
 
 export default function ApiLabPage() {
   return (
-    <main>
-      <ApiHero />
+<main>
+  <div style={{ paddingTop: "var(--header-height)" }}>
+
+    <section>
       <ApiPlayground />
+    </section>
+
+    <section style={{ marginTop: "var(--space-10)", borderTop: "1px solid var(--border)" }}>
       <AutomationConcepts />
+    </section>
+
+    <section style={{ marginTop: "var(--space-10)", borderTop: "1px solid var(--border)" }}>
       <CodeSnippets />
-      <MetricsDashboard />
-    </main>
+    </section>
+
+  </div>
+</main>
   );
 }
