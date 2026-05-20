@@ -1,19 +1,6 @@
 import styles from "@/components/Blog/Blog.module.css";
 import Link from "next/link";
-
-async function getPosts() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
-  const res = await fetch(`${baseUrl}/api/posts`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch posts");
-  }
-
-  return res.json();
-}
+import { getPosts } from "@/lib/posts";
 
 /**
  * @typedef {Object} Post
@@ -53,22 +40,28 @@ export default async function BlogPage() {
       {/* POSTS */}
       <section className={styles.postsSection}>
         <div className={styles.container}>
-          <div className={styles.postsGrid}>
-            {posts.map((post) => (
-              <article
-                key={post.id}
-                className={styles.postCard}
-              >
-                <h2>{post.title}</h2>
+          {posts.length === 0 ? (
+            <p className={styles.emptyState}>
+              No blog posts found.
+            </p>
+          ) : (
+            <div className={styles.postsGrid}>
+              {posts.map((post) => (
+                <article
+                  key={post.id}
+                  className={styles.postCard}
+                >
+                  <h2>{post.title}</h2>
 
-                <p>{post.excerpt}</p>
+                  <p>{post.excerpt}</p>
 
-                <Link href={`/blog/${post.slug}`}>
-                  Read More →
-                </Link>
-              </article>
-            ))}
-          </div>
+                  <Link href={`/blog/${post.slug}`}>
+                    Read More →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </main>

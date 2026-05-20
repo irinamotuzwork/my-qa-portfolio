@@ -182,3 +182,20 @@ Playwright tests will simulate real user behavior:
 - Add visual regression testing for blog layout
 - Add CI pipeline (GitHub Actions) for automated test runs
 - Extend tests to validate performance and loading time
+
+## Test Execution
+
+### Smoke tests
+npx playwright test --grep "@smoke"
+
+### API tests
+npx playwright test --grep "@api"
+
+### UI tests
+npx playwright test --grep "@ui"
+
+### Integration tests
+npx playwright test --grep "@integration"
+
+### Full regression
+npx playwright test --grep "@regression"
