@@ -25,6 +25,8 @@ export default defineConfig({
     navigationTimeout: 30000,
   },
 
+  grep: process.env.TEST_TAG ? new RegExp(process.env.TEST_TAG) : undefined,
+
   projects: [
     {
       name: 'chromium',

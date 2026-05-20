@@ -183,19 +183,24 @@ Playwright tests will simulate real user behavior:
 - Add CI pipeline (GitHub Actions) for automated test runs
 - Extend tests to validate performance and loading time
 
-## Test Execution
+## QA Test Execution Model
 
-### Smoke tests
+### Layer-based execution
+- API: `@api`
+- UI: `@ui`
+- Integration: `@integration`
+
+### Suite-based execution
+- Smoke: `@smoke`
+- Regression: `@regression`
+
+## Test Execution Strategy
+
+Tests are executed using tag-based filtering with Playwright’s `--grep`.
+
+### Commands
 npx playwright test --grep "@smoke"
-
-### API tests
 npx playwright test --grep "@api"
-
-### UI tests
 npx playwright test --grep "@ui"
-
-### Integration tests
 npx playwright test --grep "@integration"
-
-### Full regression
 npx playwright test --grep "@regression"

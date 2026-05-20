@@ -50,12 +50,14 @@ export default async function BlogPage() {
                 <article
                   key={post.id}
                   className={styles.postCard}
+                  data-testid="post-card"
                 >
                   <h2>{post.title}</h2>
 
                   <p>{post.excerpt}</p>
 
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}`}
+                  data-testid="read-more-link">
                     Read More →
                   </Link>
                 </article>
