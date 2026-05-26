@@ -57,7 +57,7 @@ export default async function BlogPage() {
                   <p>{post.excerpt}</p>
 
                   <Link href={`/blog/${post.slug}`}
-                  data-testid="read-more-link">
+                  data-testid="post-link">
                     Read More →
                   </Link>
                 </article>

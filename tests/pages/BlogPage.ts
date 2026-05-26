@@ -11,4 +11,8 @@ export class BlogPage {
         return this.page.locator('[data-testid="post-card"]');
     }
 
+    getPostLink() {
+        return this.page.locator('[data-testid="post-link"]');
+    }
+
 }

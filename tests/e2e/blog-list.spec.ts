@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { openBlogPage } from '../workflows/blog.workflow';
+import { openBlogPage } from '../workflows/openBlogPage.workflow';
 import { expectBlogHasPosts } from '../assertions/blog.assertions';
 
 
