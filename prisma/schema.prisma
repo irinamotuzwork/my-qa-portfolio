@@ -13,6 +13,6 @@ model Post {
   slug      String   @unique
   excerpt   String
   content   String
-  tags      String
+  tags      Json
   createdAt DateTime @default(now())
 }
