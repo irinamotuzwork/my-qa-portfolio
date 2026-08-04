@@ -1,15 +1,17 @@
-export function validatePostSchema(data: any) {
-    const isValid =
-    Array.isArray(data) && 
-    data.every((post) => 
-        typeof post.id === 'number' &&
-        typeof post.title === 'string' &&
-        typeof post.slug === 'string' &&
-        typeof post.excerpt === 'string' &&
-        typeof post.content === 'string'
-    );
+import { z } from 'zod';
 
-    return {
-        success: isValid,
-    };
+export const PostSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  slug: z.string(),
+  excerpt: z.string(),
+  content: z.string(),
+  tags: z.array(z.string()),
+  createdAt: z.string().datetime(),
+});
+
+export const PostsSchema = z.array(PostSchema);
+
+export function validatePostSchema(data: unknown) {
+  return PostsSchema.safeParse(data);
 }
